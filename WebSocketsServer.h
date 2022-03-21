@@ -1,10 +1,10 @@
 /**
  * @file WebSocketsServer.h
- * @date 20.05.2015
- * @author Markus Sattler
+ * @date 10.11.2020
+ * @author Krasimir Krastev
  *
- * Copyright (c) 2015 Markus Sattler. All rights reserved.
- * This file is part of the WebSockets for Arduino.
+ * Copyright (c) 2020 Krasimir Krastev. All rights reserved.
+ 
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
