@@ -11,7 +11,7 @@ Next picture shows the web application:
 The used hardware is a Chines relay with ESP8266, as showed on the next picture:
 ![IoTrelay](https://user-images.githubusercontent.com/7886408/153829923-29a67873-52ed-41e5-a563-c123d768af79.png)
 
-To be able toconnect it directly to 220V we use cheap Chines tiny converter 220V/5Vdc, as showed on next picture;
+To be able toconnect it directly to 220V I am  using cheap Chines tiny converter 220V/5Vdc, as showed on next picture;
 ![220V_5Vdc](https://user-images.githubusercontent.com/7886408/153830193-06c313ce-d19b-4166-8720-928812edca23.png)
 
 
