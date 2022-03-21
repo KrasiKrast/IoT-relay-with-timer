@@ -132,11 +132,6 @@ protected:
 
         void handleHeader(WSclient_t * client, String * headerLine);
 
-        /**
-         * called if a non Websocket connection is coming in.
-         * Note: can be override
-         * @param client WSclient_t *  ptr to the client struct
-         */
         virtual void handleNonWebsocketConnection(WSclient_t * client) {
             DEBUG_WEBSOCKETS("[WS-Server][%d][handleHeader] no Websocket connection close.\n", client->num);
             client->tcp->write("HTTP/1.1 400 Bad Request\r\n"
@@ -150,11 +145,6 @@ protected:
             clientDisconnect(client);
         }
 
-        /**
-         * called if a non Authorization connection is coming in.
-         * Note: can be override
-         * @param client WSclient_t *  ptr to the client struct
-         */
         virtual void handleAuthorizationFailed(WSclient_t *client) {
         	 client->tcp->write("HTTP/1.1 401 Unauthorized\r\n"
                     "Server: arduino-WebSocket-Server\r\n"
@@ -167,28 +157,13 @@ protected:
                     "This Websocket server requires Authorization!");
             clientDisconnect(client);
         }
-
-        /**
-         * called for sending a Event to the app
-         * @param num uint8_t
-         * @param type WStype_t
-         * @param payload uint8_t *
-         * @param length size_t
-         */
+       
         virtual void runCbEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length) {
             if(_cbEvent) {
                 _cbEvent(num, type, payload, length);
             }
         }
-
-        /*
-         * Called at client socket connect handshake negotiation time for each http header that is not
-         * a websocket specific http header (not Connection, Upgrade, Sec-WebSocket-*)
-         * If the custom httpHeaderValidationFunc returns false for any headerName / headerValue passed, the
-         * socket negotiation is considered invalid and the upgrade to websockets request is denied / rejected
-         * This mechanism can be used to enable custom authentication schemes e.g. test the value
-         * of a session cookie to determine if a user is logged on / authenticated
-         */
+       
         virtual bool execHttpHeaderValidation(String headerName, String headerValue) {
         	if(_httpHeaderValidationFunc) {
         		//return the value of the custom http header validation function
@@ -198,11 +173,7 @@ protected:
         	return true;
         }
 
-private:
-        /*
-         * returns an indicator whether the given named header exists in the configured _mandatoryHttpHeaders collection
-         * @param headerName String ///< the name of the header being checked
-         */
+private:       
         bool hasMandatoryHeader(String headerName);
 
 };
