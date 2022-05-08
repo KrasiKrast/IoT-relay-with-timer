@@ -1,6 +1,7 @@
 /*
  * ESP8266 IoT web Relay 
  * Designed by Krasimir Krastev 2020
+ * used as IoT bathroom fan to be able for automatic shut down 
  */
 
 #include <ESP8266WiFi.h>
