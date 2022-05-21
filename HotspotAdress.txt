@@ -1,0 +1,2 @@
+Default server IP address in hotspot mode is:
+192.168.4.1
