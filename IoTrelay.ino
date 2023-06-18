@@ -27,7 +27,7 @@ const char FANOFF[] = "fanoff";
 //-------------------------------------------------------------------------------------------
  
 static const char ssid[] = "HomeNet2g";
-static const char password[] = "33006655KhKadmin";
+static const char password[] = "HomeNet!2345";
 
 int timeDelay = 3; //minutes
 int timeSeconds = 0;
